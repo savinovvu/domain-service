@@ -13,6 +13,6 @@ import java.util.Set;
 @Repository
 public interface DomainRepository extends JpaRepository<Domain, Long> {
 
-    @Query("SELECT d.name FROM Domain d WHERE d.name like :name")
-    Set<String> existsByName(@Param("name") String name);
+    @Query("SELECT d.name FROM Domain d WHERE d.name like :regExp")
+    Set<String> findByRegExp(@Param("regExp") String regExp);
 }

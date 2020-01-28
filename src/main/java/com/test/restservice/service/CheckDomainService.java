@@ -35,7 +35,7 @@ public class CheckDomainService {
     public List<CheckDomainDto> checkDomain(SearchDto searchDto) {
         String domainName = searchDto.getSearch();
         String condition = domainName + DOMAIN_QUERY_END;
-        Set<String> existDomains = domainRepository.existsByName(condition);
+        Set<String> existDomains = domainRepository.findByRegExp(condition);
         List<Tld> tlds = tldRepository.findAll(TLD_SORT);
         List<CheckDomainDto> result = CheckDomainDto.of(existDomains, tlds, domainName);
         return result;
