@@ -16,4 +16,5 @@ CREATE TABLE domains (
 );
 
 INSERT INTO domains (name) VALUES
-  ('existing');
+  ('existing.com'),
+  ('new-domain.com');

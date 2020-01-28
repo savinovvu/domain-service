@@ -8,6 +8,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 
+
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,10 +17,12 @@ import java.io.Serializable;
 @Entity
 @Table(name = "domains")
 public class Domain implements Serializable {
+
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column
     private String name;
 }
